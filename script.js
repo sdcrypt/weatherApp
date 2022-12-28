@@ -13,13 +13,16 @@ const epochToHrMin = (epoch)=>{
 	hour: '2-digit',
 	minute: '2-digit',
 	});
-	console.log(time)
 	return time
 }
 
-const getWeather = (city) => {	
+const getWeather = (city) => {
+	if (city === "") {
+		city = 'Delhi'
+	}		
 	cityName.innerHTML = city
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)	
+	weatherAPI = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='
+	fetch(weatherAPI + city, options)	
 		.then(response => response.json())
 		.then((response) => {
 			console.log(response)			
