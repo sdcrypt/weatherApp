@@ -17,8 +17,6 @@ const epochToHrMin = (epoch)=>{
 	return time
 }
 
-epochToHrMin(1672233448)
-
 const getWeather = (city) => {	
 	cityName.innerHTML = city
 	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)	
